@@ -6,7 +6,10 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <title>@undo76</title>
-          <meta name="Personal site of Manolo Santos (@undo76)" />
+          <meta
+            name="description"
+            content="Personal site of Manolo Santos (@undo76). Software engineer, full-stack development, Machine learning."
+          />
           <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         </Head>
         <body>
