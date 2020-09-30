@@ -1,12 +1,9 @@
+import { Layout } from "../components/Layout";
+
 export default function RecordPage() {
     return (
-        <>
-            <header className="p-12 bg-red-500 text-red-100 uppercase">
-                <h1 className="text-4xl font-extrabold">UNDO76</h1>
-                <h2 className="text-2xl font-light">Manuel Santos</h2>
-                <h2 className="text-2xl font-light">Software engineer</h2>
-            </header>
-            <section className="prose m-auto">
+        <Layout>
+            <article className="prose m-auto">
                 <div className="page-body">
                     <h2 id="fcb01968-2108-47bf-89fa-61d9cea126dc" className="">
                         CV Summary
@@ -278,7 +275,7 @@ export default function RecordPage() {
                         </li>
                     </ul>
                 </div>
-            </section>
-        </>
+            </article>
+        </Layout>
     );
 }
