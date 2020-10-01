@@ -1,25 +1,25 @@
 import Layout from '../components/layout';
 
-export default function RecordPage() {
+export default function SkillsPage() {
     return (
         <Layout>
             <article className="prose">
                 <div>
-                    <h2>CV Summary</h2>
-                    <p>
-                        Manuel Víctor Santos López is an experimented
-                        analyst/application architect with good knowledge in Web
-                        technologies, Java, XML and Oracle and broad interests
-                        in Computer Science, Design, Machine Learning and
-                        Software Engineering.
-                    </p>
-                    <p>
-                        He is a vocational professional and he has got a
-                        university degree in IT Engineering, speaks English,
-                        French and Spanish and has a very good team spirit. He
-                        is self-motivated and is looking forward to learn new
-                        things all the time. Specific CS related skills:
-                    </p>
+                    <h2>Skills</h2>
+                    {/*<p>*/}
+                    {/*    Manuel Víctor Santos López is an experimented*/}
+                    {/*    analyst/application architect with good knowledge in Web*/}
+                    {/*    technologies, Java, XML and Oracle and broad interests*/}
+                    {/*    in Computer Science, Design, Machine Learning and*/}
+                    {/*    Software Engineering.*/}
+                    {/*</p>*/}
+                    {/*<p>*/}
+                    {/*    He is a vocational professional and he has got a*/}
+                    {/*    university degree in IT Engineering, speaks English,*/}
+                    {/*    French and Spanish and has a very good team spirit. He*/}
+                    {/*    is self-motivated and is looking forward to learn new*/}
+                    {/*    things all the time. Specific CS related skills:*/}
+                    {/*</p>*/}
 
                     <h3>Programming</h3>
 

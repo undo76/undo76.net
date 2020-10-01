@@ -1,4 +1,72 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import cx from 'classnames';
+
+function MenuLink({ href, children }) {
+    const { route } = useRouter();
+
+    const classNames = cx(
+        'px-3 py-2 rounded-md text-sm font-medium ',
+        route === href
+            ? 'text-white bg-gray-900 '
+            : 'text-gray-300 hover:text-white hover:bg-gray-700',
+        'focus:outline-none focus:text-white focus:bg-gray-700'
+    );
+
+    return (
+        <Link href={href}>
+            <a className={classNames}>{children}</a>
+        </Link>
+    );
+}
+
+function MenuLinks() {
+    return (
+        <>
+            <div className="flex items-center">
+                <div className="hidden md:block">
+                    <div className="ml-10 flex items-baseline space-x-4">
+                        <MenuLink href="/">Home</MenuLink>
+                        <MenuLink href="/skills">About me</MenuLink>
+                    </div>
+                </div>
+            </div>
+            <div className="-mr-2 flex md:hidden">
+                {/* Mobile menu button */}
+                <button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
+                    {/* Menu open: "hidden", Menu closed: "block" */}
+                    <svg
+                        className="block h-6 w-6"
+                        stroke="currentColor"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                    {/* Menu open: "block", Menu closed: "hidden" */}
+                    <svg
+                        className="hidden h-6 w-6"
+                        stroke="currentColor"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </div>
+        </>
+    );
+}
 
 export default function Layout({ children }) {
     return (
@@ -6,60 +74,11 @@ export default function Layout({ children }) {
             <nav className="bg-gray-800">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
-                        <h1 className="font-light text-4xl text-red-600 uppercase">
-                            undo76
+                        <h1 className="font-light text-4xl text-red-500 uppercase">
+                            undo 76
                         </h1>
-                        <div className="flex items-center">
 
-                            <div className="hidden md:block">
-                                <div className="ml-10 flex items-baseline space-x-4">
-                                    <Link href="/">
-                                        <a className="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700">
-                                            Home
-                                        </a>
-                                    </Link>
-                                    <Link href="/record">
-                                        <a className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
-                                            About me
-                                        </a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="-mr-2 flex md:hidden">
-                            {/* Mobile menu button */}
-                            <button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
-                                {/* Menu open: "hidden", Menu closed: "block" */}
-                                <svg
-                                    className="block h-6 w-6"
-                                    stroke="currentColor"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                </svg>
-                                {/* Menu open: "block", Menu closed: "hidden" */}
-                                <svg
-                                    className="hidden h-6 w-6"
-                                    stroke="currentColor"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
+                        <MenuLinks />
                     </div>
                 </div>
                 {/*
