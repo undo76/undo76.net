@@ -93,13 +93,13 @@ function MainNav() {
                                 />
                             </svg>
                         </div> */}
-                        <h1 className="font-light text-3xl md:text-4xl text-cool-gray-50 uppercase italic">
-                            undo<b className="text-red-500">76</b>
+                        <h1 className="font-extrabold text-3xl md:text-4xl text-cool-gray-50 uppercase italic">
+                            undo<b className="text-red-500 font-extrabold">76</b>
                         </h1>
 
-                        <h2 className="text-cool-gray-50 ml-2 italic">
-                            <i className="opacity-75">by</i>{' '}
-                            <b>Manolo Santos</b>
+                        <h2 className="text-cool-gray-50 ml-1 italic">
+                            <i className="opacity-50">by</i>{' '}
+                            <span>Manolo Santos</span>
                         </h2>
                     </header>
                     <MenuLinks />
