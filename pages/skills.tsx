@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 export default function SkillsPage() {
     return (
         <Layout>
-            <article className="prose">
+            <article className="prose prose-sm md:prose">
                 <div>
                     <h2>Skills</h2>
                     {/*<p>*/}
