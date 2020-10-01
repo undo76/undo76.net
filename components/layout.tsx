@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
-import { useState } from 'react';
+import { useReducer } from 'react';
 
 function MenuLink({ href, children }) {
     const { route } = useRouter();
@@ -21,12 +21,13 @@ function MenuLink({ href, children }) {
     );
 }
 
-function Hamburger({ open, setOpen }) {
+function Hamburger({ open, onToggle }) {
     return (
         <div className="-mr-2 flex md:hidden">
             <button
-                onClick={() => setOpen(!open)}
+                onClick={onToggle}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white"
+                aria-label="main menu"
             >
                 <svg
                     className="h-6 w-6"
@@ -71,7 +72,7 @@ function MenuLinks() {
 }
 
 export default function Layout({ children }) {
-    const [open, setOpen] = useState(false);
+    const [open, toggle] = useReducer((state) => !state, false);
     return (
         <div className="bg-cool-gray-50 min-h-screen">
             <nav className="bg-gray-800">
@@ -81,7 +82,7 @@ export default function Layout({ children }) {
                             undo<b className="text-red-500">76</b>
                         </h1>
                         <MenuLinks />
-                        <Hamburger open={open} setOpen={setOpen}/>
+                        <Hamburger open={open} onToggle={toggle} />
                     </div>
                 </div>
 
