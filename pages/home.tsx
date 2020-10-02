@@ -1,17 +1,17 @@
 import cx from 'classnames';
 import Button from '../components/button';
+import Layout from "../components/layout";
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-cool-gray-50 text-cool-gray-700">
-            <Navigation />
-            <main className="p-10 flex-col space-y-5">
+        <Layout>
+            <main className="pt-10 flex-col space-y-5">
                 <Content />
                 <Content />
                 <Content />
                 <Content />
             </main>
-        </div>
+        </Layout>
     );
 }
 

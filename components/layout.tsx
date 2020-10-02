@@ -57,22 +57,15 @@ function Hamburger({ open, onToggle }) {
     );
 }
 
-function MenuLinks() {
-    return (
-        <>
-            <div className="flex items-center">
-                <div className="hidden md:block">
-                    <div className="ml-10 flex items-baseline space-x-4">
-                        <MenuLink href="/">Home</MenuLink>
-                        <MenuLink href="/skills">About me</MenuLink>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+function MenuLinks({ links, block = false }) {
+    return links.map(({ href, label }) => (
+        <MenuLink href={href} block={block}>
+            {label}
+        </MenuLink>
+    ));
 }
 
-function MainNav() {
+function MainNav({ links }) {
     const [open, toggle] = useReducer((state) => !state, false);
 
     return (
@@ -94,7 +87,8 @@ function MainNav() {
                             </svg>
                         </div> */}
                         <h1 className="font-extrabold text-3xl md:text-4xl text-cool-gray-50 uppercase italic">
-                            undo<b className="text-red-500 font-extrabold">76</b>
+                            undo
+                            <b className="text-red-500 font-extrabold">76</b>
                         </h1>
 
                         <h2 className="text-cool-gray-50 ml-1 italic">
@@ -102,19 +96,22 @@ function MainNav() {
                             <span>Manolo Santos</span>
                         </h2>
                     </header>
-                    <MenuLinks />
+
+                    <div className="flex items-center">
+                        <div className="hidden md:block">
+                            <div className="ml-10 flex items-baseline space-x-4">
+                                <MenuLinks links={links} />
+                            </div>
+                        </div>
+                    </div>
+
                     <Hamburger open={open} onToggle={toggle} />
                 </div>
             </div>
 
             {open && (
                 <nav className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <MenuLink href="/" block>
-                        Home
-                    </MenuLink>
-                    <MenuLink href="/skills" block>
-                        About me
-                    </MenuLink>
+                    <MenuLinks links={links} block />
                 </nav>
             )}
         </div>
@@ -122,9 +119,24 @@ function MainNav() {
 }
 
 export default function Layout({ children }) {
+    const links = [
+        {
+            href: '/',
+            label: 'Home',
+        },
+        {
+            href: '/professional-experience',
+            label: 'Experience',
+        },
+        {
+            href: '/skills',
+            label: 'Skills',
+        },
+    ];
+
     return (
         <div className="bg-cool-gray-50 min-h-screen">
-            <MainNav />
+            <MainNav links={links} />
 
             {/* <header className="bg-white shadow">
                 <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -133,10 +145,8 @@ export default function Layout({ children }) {
                     </h1>
                 </div>
             </header> */}
-            <main>
-                <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                    <div className="px-4 sm:px-0">{children}</div>
-                </div>
+            <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                <div className="px-4 sm:px-0">{children}</div>
             </main>
         </div>
     );
