@@ -22,7 +22,7 @@ function MenuLink({ href, block = false, children }) {
     );
 }
 
-function Hamburger({ open, onToggle }) {
+function HamburgerButton({ open, onToggle }) {
     return (
         <div className="-mr-2 flex md:hidden">
             <button
@@ -73,44 +73,28 @@ function MainNav({ links }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <header className="flex items-baseline">
-                        {/* <div className="text-yellow-200 fill-current self-center h-8 w-8 mr-1">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </div> */}
                         <h1 className="font-extrabold text-3xl md:text-4xl text-cool-gray-50 uppercase italic">
                             undo
                             <b className="text-red-500 font-extrabold">76</b>
                         </h1>
 
-                        <h2 className="text-cool-gray-50 ml-1 italic">
+                        <h2 className="hidden lg:block text-cool-gray-50 ml-1 italic">
                             <i className="opacity-50">by</i>{' '}
                             <span>Manolo Santos</span>
                         </h2>
                     </header>
 
                     <div className="flex items-center">
-                        <div className="hidden md:block">
-                            <div className="ml-10 flex items-baseline space-x-4">
-                                <MenuLinks links={links} />
-                            </div>
+                        <div className="hidden md:block ml-10 flex items-baseline space-x-4">
+                            <MenuLinks links={links} />
                         </div>
+                        <HamburgerButton open={open} onToggle={toggle} />
                     </div>
-
-                    <Hamburger open={open} onToggle={toggle} />
                 </div>
             </div>
 
             {open && (
-                <nav className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <nav className="md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3">
                     <MenuLinks links={links} block />
                 </nav>
             )}
