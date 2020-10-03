@@ -5,7 +5,6 @@ export default class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    <title>@undo76</title>
                     <meta
                         name="description"
                         content="Personal site of Manolo Santos (@undo76). Software engineer, full-stack development, Machine learning."

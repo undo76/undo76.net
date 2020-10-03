@@ -1,20 +1,24 @@
 import Layout from '../components/layout';
+import Workplace from '../components/workplace';
 
 export default function SkillsPage() {
     return (
         <Layout>
-            <article className="prose prose-sm md:prose">
-                <h2>Professional experience</h2>
-                <section>
-                    <h3>DIGIT — European Commission</h3>
-                    <p>Brussels (Belgium)</p>
-                    <p>January 2017 - November 2020</p>
+            <article>
+                <h2 className="text-4xl mt-10">Professional experience</h2>
+
+                <Workplace
+                    title="European&nbsp;Commission /&nbsp;DIGIT"
+                    location="Brussels (Belgium)"
+                    period="January 2017 - November 2020"
+                >
                     <p>
-                        Freelance contractor under Atos as architect and
-                        full-stack developer. Continued and expanding the work
-                        that I did in DG-EMPL{' '}
-                        <em>(See DG-EMPL experience below).</em>
+                        Freelance contractor under Atos as architect
+                        andasfdasdfasdf full-stack developer. Continued and
+                        expanding the work that I did in DG-EMPL{' '}
+                        <em>(See DG EMPL experience below).</em>
                     </p>
+
                     <h4>Projects</h4>
                     <ul>
                         <li>
@@ -32,6 +36,7 @@ export default function SkillsPage() {
                             <em>In development.</em>
                         </li>
                     </ul>
+
                     <h4>Technologies</h4>
                     <ul>
                         <li>
@@ -49,11 +54,13 @@ export default function SkillsPage() {
                         <li>Cloud (AWS), Docker</li>
                         <li>Git, DevOps (CSDR stack), JIRA, Bamboo</li>
                     </ul>
-                </section>
-                <section>
-                    <h3>DG EMPL — European Commission</h3>
-                    <p>Brussels (Belgium)</p>
-                    <p>May 2007 - January 2017</p>
+                </Workplace>
+
+                <Workplace
+                    title="European&nbsp;Commission /&nbsp;DG&nbsp;EMPL"
+                    location="Brussels (Belgium)"
+                    period="May 2007 - January 2017"
+                >
                     <p>
                         Freelance contractor under different consortiums (IRIS,
                         Siemens, Atos) as architect and full-stack developer for
@@ -99,22 +106,28 @@ export default function SkillsPage() {
                         <li>Oracle DB, Oracle Text, SOAP WS, REST WS</li>
                         <li>SVN, Git, JIRA, Bamboo, RUP@EC, PM2, Scrum</li>
                     </ul>
-                </section>
-                <section>
-                    <h3>Tractis</h3>
-                    <p>Remote - Valladolid, Madrid, Barcelona (Spain)</p>
-                    <p>February 2006 - April 2007</p>
+                </Workplace>
+
+                <Workplace
+                    title="Tractis"
+                    location="Remote - Valladolid, Madrid, Barcelona (Spain)"
+                    period="February 2006 - April 2007"
+                >
                     <p>
-                        Tractis was a start-up company with the ambition of
-                        making contracts and digital signatures accessible to
-                        everyone, allowing creation, collaborative edition and
-                        electronic signatures. I was involved in its inception
-                        and after some early investors funding, I became its
-                        first CTO, being in charge of the development and
-                        operations of the company. Initially we were three
-                        full-time employees and around ten external
+                        <i>Tractis</i> is a start-up with the ambition of making
+                        contracts and digital signatures accessible to everyone.
+                        It allows creating, collaborative editing and electronic
+                        signing of contracts.
+                    </p>
+                    <p>
+                        I was involved in its inception and development as a
+                        side project. After some early investors funding, I
+                        became its first CTO, being in responsible of the
+                        development and operations of the company. Initially, we
+                        were three full-time employees and around ten external
                         collaborators. It ended operations in April 2018.
                     </p>
+
                     <h4>Tasks</h4>
                     <p>
                         CTO working hand in hand with the CEO of the company.
@@ -122,9 +135,12 @@ export default function SkillsPage() {
                         and infrastructure, operations, security and
                         coordination of the external collaborators.{' '}
                     </p>
+
                     <h4>Technologies</h4>
                     <ul>
-                        <li>Ruby on Rails. Javascript, jQuery, Capistrano</li>
+                        <li>Ruby on Rails</li>
+                        <li>Javascript, jQuery, Capistrano</li>
+                        <li>PHP, Wordpress</li>
                         <li>Java applets, Spring framework, Hibernate</li>
                         <li>MySQL, XaDES</li>
                         <li>
@@ -132,11 +148,13 @@ export default function SkillsPage() {
                             Programming)
                         </li>
                     </ul>
-                </section>
-                <section>
-                    <h3>Telefonica I+D and AXPE Consulting</h3>
-                    <p>Valladolid (Spain)</p>
-                    <p>March 2002 - February 2006</p>
+                </Workplace>
+
+                <Workplace
+                    title="Telefonica I+D and AXPE Consulting"
+                    location="Valladolid (Spain)"
+                    period="March 2002 - February 2006"
+                >
                     <p>
                         Started as full-time intern and then as a subcontractor
                         (AXPE consulting) in the ODIN project (formerly TQ).
@@ -156,17 +174,11 @@ export default function SkillsPage() {
                     <h4>Technologies</h4>
                     <ul>
                         <li>Primitive Web technologies. CSS, JS and HTML.</li>
-                    </ul>
-                    <ul>
                         <li>Java Servlets and JSP on JRun server</li>
-                    </ul>
-                    <ul>
                         <li>Oracle DB, XML</li>
+                        <li>CVS, Python, Shell scripts (awk, sed, etc), RUP, UML.</li>
                     </ul>
-                    <ul>
-                        <li>CVS, Shell scripts (awk, sed, etc), RUP, UML.</li>
-                    </ul>
-                </section>
+                </Workplace>
             </article>
         </Layout>
     );
