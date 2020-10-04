@@ -85,7 +85,7 @@ function MainNav({ links }) {
                     </header>
 
                     <div className="flex items-center">
-                        <div className="hidden md:block ml-10 flex items-baseline space-x-4">
+                        <div className="hidden md:flex ml-10 items-baseline space-x-4">
                             <MenuLinks links={links} />
                         </div>
                         <HamburgerButton open={open} onToggle={toggle} />
