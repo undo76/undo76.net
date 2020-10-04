@@ -11,14 +11,13 @@ export default function SkillsPage() {
                     title="European&nbsp;Commission /&nbsp;DIGIT"
                     location="Brussels (Belgium)"
                     period="January 2017 - November 2020"
+                    summary="Senior architect and full-stack developer"
                 >
                     <p>
-                        Freelance contractor under Atos as architect
-                        andasfdasdfasdf full-stack developer. Continued and
-                        expanding the work that I did in DG-EMPL{' '}
+                        Freelance contractor under Atos as architect expanding
+                        the work that I did in DG-EMPL{' '}
                         <em>(See DG EMPL experience below).</em>
                     </p>
-
                     <h4>Projects</h4>
                     <ul>
                         <li>
@@ -60,14 +59,15 @@ export default function SkillsPage() {
                     title="European&nbsp;Commission /&nbsp;DG&nbsp;EMPL"
                     location="Brussels (Belgium)"
                     period="May 2007 - January 2017"
+                    summary="Senior architect, designer and full-stack developer"
                 >
+                    <h4>Projects</h4>
                     <p>
                         Freelance contractor under different consortiums (IRIS,
                         Siemens, Atos) as architect and full-stack developer for
                         several projects in the Employment Directorate and
                         Social Affaires Directorate (DG-EMPL).
                     </p>
-                    <h4>Projects</h4>
                     <p>
                         Analysis, architecture and development of several
                         systems:
@@ -75,7 +75,7 @@ export default function SkillsPage() {
                     <ul>
                         <li>
                             <strong>
-                                SWIM, DEFIS, PUBLIGRANT, ANTICIPEDIA:{' '}
+                                SWIM, DEFIS, PUBLIGRANT, ANTICIPEDIA:
                             </strong>
                             Grant management, comprising publication,
                             evaluation, selection, budget, prefinancing and
@@ -111,7 +111,8 @@ export default function SkillsPage() {
                 <Workplace
                     title="Tractis"
                     location="Remote - Valladolid, Madrid, Barcelona (Spain)"
-                    period="February 2006 - April 2007"
+                    period="February 2005 - April 2007"
+                    summary="Co-founder, CTO, architect, and full-stack developer"
                 >
                     <p>
                         <i>Tractis</i> is a start-up with the ambition of making
@@ -154,6 +155,7 @@ export default function SkillsPage() {
                     title="Telefonica I+D and AXPE Consulting"
                     location="Valladolid (Spain)"
                     period="March 2002 - February 2006"
+                    summary="Junior full-stack developer and architect"
                 >
                     <p>
                         Started as full-time intern and then as a subcontractor
@@ -176,7 +178,10 @@ export default function SkillsPage() {
                         <li>Primitive Web technologies. CSS, JS and HTML.</li>
                         <li>Java Servlets and JSP on JRun server</li>
                         <li>Oracle DB, XML</li>
-                        <li>CVS, Python, Shell scripts (awk, sed, etc), RUP, UML.</li>
+                        <li>
+                            CVS, Python, Shell scripts (awk, sed, etc), RUP,
+                            UML.
+                        </li>
                     </ul>
                 </Workplace>
             </article>
