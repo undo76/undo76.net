@@ -1,12 +1,16 @@
 import Layout from '../components/layout';
+import PageHeader from '../components/page-header';
+import Tabs from '../components/tabs';
 import Workplace from '../components/workplace';
 
 export default function SkillsPage() {
     return (
         <Layout>
             <article>
-                <h2 className="text-4xl mt-10">Professional experience</h2>
-
+                <PageHeader>Resume</PageHeader>
+           
+                <Tabs />
+                
                 <Workplace
                     title="European&nbsp;Commission /&nbsp;DIGIT"
                     location="Brussels (Belgium)"

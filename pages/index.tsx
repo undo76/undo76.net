@@ -1,9 +1,11 @@
 import Layout from '../components/layout';
+import PageHeader from '../components/page-header';
 
 export default function IndexPage() {
     return (
         <Layout>
-            <h1 className="text-3xl">Personal page of Manolo Santos</h1>
+            <PageHeader>Personal page of Manolo Santos</PageHeader>
+            <p>Mi casa es su casa</p>
         </Layout>
     );
 }
