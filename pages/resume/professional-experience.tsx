@@ -1,16 +1,18 @@
-import Layout from '../components/layout';
-import PageHeader from '../components/page-header';
-import Tabs from '../components/tabs';
-import Workplace from '../components/workplace';
+import Layout from '../../components/layout';
+import PageHeader from '../../components/page-header';
+import Tabs from '../../components/tabs';
+import Workplace from '../../components/workplace';
 
 export default function SkillsPage() {
     return (
         <Layout>
-            <article>
+            <article className="relative">
                 <PageHeader>Resume</PageHeader>
-           
-                <Tabs />
-                
+
+                <div className="sticky top-0 bg-cool-gray-50 z-10">
+                    <Tabs />
+                </div>
+
                 <Workplace
                     title="European&nbsp;Commission /&nbsp;DIGIT"
                     location="Brussels (Belgium)"

@@ -5,11 +5,12 @@ import { useReducer } from 'react';
 
 function MenuLink({ href, block = false, children }) {
     const { route } = useRouter();
+    const isActive = route === href;
 
     const classNames = cx(
         'px-3 py-2 rounded-md font-medium ',
         block ? 'block text-base' : 'inline text-sm',
-        route === href
+        isActive
             ? 'text-white bg-gray-900 '
             : 'text-gray-300 hover:text-white hover:bg-gray-700',
         'focus:outline-none focus:text-white focus:bg-gray-700'
@@ -59,14 +60,16 @@ function HamburgerButton({ open, onToggle }) {
 
 function MenuLinks({ links, block = false }) {
     return links.map(({ href, label }) => (
-        <MenuLink href={href} block={block}>
+        <MenuLink key={href} href={href} block={block}>
             {label}
         </MenuLink>
     ));
 }
 
+const toggleReducer = (state: boolean) => !state;
+
 function MainNav({ links }) {
-    const [open, toggle] = useReducer((state) => !state, false);
+    const [open, toggle] = useReducer(toggleReducer, false);
 
     return (
         <div className="bg-cool-gray-800">
@@ -109,12 +112,8 @@ export default function Layout({ children }) {
             label: 'Home',
         },
         {
-            href: '/professional-experience',
-            label: 'Experience',
-        },
-        {
-            href: '/skills',
-            label: 'Skills',
+            href: '/resume/professional-experience',
+            label: 'Resume',
         },
     ];
 
