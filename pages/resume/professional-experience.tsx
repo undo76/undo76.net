@@ -1,6 +1,6 @@
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
-import Tabs from '../../components/tabs';
+import ResumeTabs from '../../components/resume-tabs';
 import Workplace from '../../components/workplace';
 
 export default function SkillsPage() {
@@ -10,7 +10,7 @@ export default function SkillsPage() {
                 <PageHeader>Resume</PageHeader>
 
                 <div className="sticky top-0 bg-cool-gray-50 z-10">
-                    <Tabs />
+                    <ResumeTabs />
                 </div>
 
                 <Workplace

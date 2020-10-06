@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
 import { useReducer } from 'react';
+import useActiveRoute from '../hooks/useActiveRoute';
 
 function MenuLink({ href, block = false, children }) {
-    const { route } = useRouter();
-    const isActive = route === href;
+    const isActive = useActiveRoute(href);
 
     const classNames = cx(
         'px-3 py-2 rounded-md font-medium ',

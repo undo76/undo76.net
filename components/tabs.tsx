@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import useActiveRoute from '../hooks/useActiveRoute';
 
-export default function Tabs() {
+export default function Tabs({children}) {
     return (
         <div>
             {/* <div className="sm:hidden">
@@ -15,37 +16,29 @@ export default function Tabs() {
                 </select>
             </div> */}
             <div className="block">
-                <div className="border-b border-gray-200">
+                <div className="border-b border-cool-gray-200">
                     <nav className="-mb-px flex">
-                        <Link href="/resume/professional-experience">
-                            <a className="whitespace-no-wrap py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-                                Experience
-                            </a>
-                        </Link>
-
-                        <Link href="/resume/skills">
-                            <a className="whitespace-no-wrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
-                                Skills
-                            </a>
-                        </Link>
-
-                        
-                        <a
-                            href="#"
-                            className="whitespace-no-wrap ml-8 py-4 px-1 border-b-2 border-indigo-500 font-medium text-sm leading-5 text-indigo-600 focus:outline-none focus:text-indigo-800 focus:border-indigo-700"
-                            aria-current="page"
-                        >
-                            Team Members
-                        </a>
-                        <a
-                            href="#"
-                            className="whitespace-no-wrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
-                        >
-                            Billing
-                        </a>
+                        {children}
                     </nav>
                 </div>
             </div>
         </div>
     );
 }
+
+Tabs.Link = ({ href, children }) => {
+    const isActive = useActiveRoute(href);
+    const className = isActive
+        ? 'whitespace-no-wrap mr-8 py-4 px-1 border-b-2 border-red-500 font-medium text-sm leading-5 text-red-600 focus:outline-none focus:text-red-800 focus:border-red-700'
+        : 'whitespace-no-wrap mr-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300';
+    return (
+        <Link href={href}>
+            <a
+                className={className}
+                aria-current={isActive ? 'page' : undefined}
+            >
+                {children}
+            </a>
+        </Link>
+    );
+};
