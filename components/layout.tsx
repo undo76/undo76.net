@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import cx from 'classnames';
 import { useReducer } from 'react';
 import useActiveRoute from '../hooks/useActiveRoute';
+import LayoutFooter from './layout-footer';
 
 function MenuLink({ href, block = false, children }) {
     const isActive = useActiveRoute(href);
@@ -118,19 +118,22 @@ export default function Layout({ children }) {
     ];
 
     return (
-        <div className="bg-cool-gray-50 min-h-screen">
-            <MainNav links={links} />
-
-            {/* <header className="bg-white shadow">
-                <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <h1 className="text-3xl font-bold leading-tight text-gray-900">
-                        Dashboard
-                    </h1>
-                </div>
-            </header> */}
-            <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                <div className="px-4 sm:px-0">{children}</div>
-            </main>
+        <div className="flex flex-col justify-between bg-cool-gray-50 min-h-screen">
+            <div>
+                <MainNav links={links} />
+    
+                {/* <header className="bg-white shadow">
+                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        <h1 className="text-3xl font-bold leading-tight text-gray-900">
+                            Dashboard
+                        </h1>
+                    </div>
+                </header> */}
+                <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                    <div className="px-4 sm:px-0">{children}</div>
+                </main>
+            </div>
+            <LayoutFooter/>
         </div>
     );
 }
