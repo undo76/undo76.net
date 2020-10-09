@@ -1,15 +1,11 @@
 import Layout from '../../components/layout';
-import PageHeader from '../../components/page-header';
-import ResumeTabs from '../../components/resume-tabs';
+import ResumeHeader from '../../components/resume-header';
 
 export default function SkillsPage() {
     return (
         <Layout>
             <article>
-                <PageHeader>Skills</PageHeader>
-                <div className="sticky top-0 bg-cool-gray-50 z-10">
-                    <ResumeTabs />
-                </div>
+                <ResumeHeader />
                 <div className="mt-8 prose prose-sm md:prose">
                     {/*<p>*/}
                     {/*    Manuel Víctor Santos López is an experimented*/}

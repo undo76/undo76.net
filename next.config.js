@@ -3,7 +3,7 @@ module.exports = {
         return [
             {
                 source: '/resume',
-                destination: '/resume/professional-experience',
+                destination: '/resume/personal',
                 permanent: false,
             },
         ];

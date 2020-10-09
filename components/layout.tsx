@@ -5,7 +5,7 @@ import useActiveRoute from '../hooks/useActiveRoute';
 import LayoutFooter from './layout-footer';
 
 function MenuLink({ href, block = false, children }) {
-    const isActive = useActiveRoute(href);
+    const isActive = useActiveRoute(href, 1);
 
     const classNames = cx(
         'px-3 py-2 rounded-md font-medium ',
@@ -75,17 +75,23 @@ function MainNav({ links }) {
         <div className="bg-cool-gray-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    <header className="flex items-baseline">
-                        <h1 className="font-extrabold text-3xl md:text-4xl text-cool-gray-50 uppercase italic">
-                            undo
-                            <b className="text-red-500 font-extrabold">76</b>
-                        </h1>
+                    <Link href="/">
+                        <a>
+                            <header className="flex items-baseline">
+                                <h1 className="font-extrabold text-3xl md:text-4xl text-cool-gray-50 uppercase italic">
+                                    undo
+                                    <b className="text-red-500 font-extrabold">
+                                        76
+                                    </b>
+                                </h1>
 
-                        <h2 className="hidden lg:block text-cool-gray-50 ml-1 italic">
-                            <i className="opacity-50">by</i>{' '}
-                            <span>Manolo Santos</span>
-                        </h2>
-                    </header>
+                                <h2 className="hidden lg:block text-cool-gray-50 ml-1 italic">
+                                    <i className="opacity-50">by</i>{' '}
+                                    <span>Manolo Santos</span>
+                                </h2>
+                            </header>
+                        </a>
+                    </Link>
 
                     <div className="flex items-center">
                         <div className="hidden md:flex ml-10 items-baseline space-x-4">
@@ -112,7 +118,7 @@ export default function Layout({ children }) {
             label: 'Home',
         },
         {
-            href: '/resume/professional-experience',
+            href: '/resume/personal',
             label: 'Resume',
         },
     ];
@@ -121,7 +127,7 @@ export default function Layout({ children }) {
         <div className="flex flex-col justify-between bg-cool-gray-50 min-h-screen">
             <div>
                 <MainNav links={links} />
-    
+
                 {/* <header className="bg-white shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         <h1 className="text-3xl font-bold leading-tight text-gray-900">
@@ -133,7 +139,7 @@ export default function Layout({ children }) {
                     <div className="px-4 sm:px-0">{children}</div>
                 </main>
             </div>
-            <LayoutFooter/>
+            <LayoutFooter />
         </div>
     );
 }
