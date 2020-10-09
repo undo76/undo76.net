@@ -86,7 +86,7 @@ function MainNav({ links }) {
                                 </h1>
 
                                 <h2 className="hidden lg:block text-cool-gray-50 ml-1 italic">
-                                    <i className="opacity-50">by</i>{' '}
+                                    <i className="opacity-75">by</i>{' '}
                                     <span>Manolo Santos</span>
                                 </h2>
                             </header>

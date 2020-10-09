@@ -10,6 +10,10 @@ export default class MyDocument extends Document {
                         content="Personal site of Manolo Santos (@undo76). Software engineer, full-stack development, Machine learning."
                     />
                     <link
+                        rel="preconnect"
+                        href="https://rsms.me"
+                    />
+                    <link
                         rel="preload"
                         href="https://rsms.me/inter/inter.css"
                         as="style"
