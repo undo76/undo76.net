@@ -33,7 +33,7 @@ export default function SkillsPage() {
                         <li>
                             <strong>PMO-Mobile AGM:</strong> Integration of the
                             AGM front-office into the PMO Mobile Application.
-                            <em>Currently in development.</em>
+                            <em> Currently in development.</em>
                         </li>
                     </ul>
 
@@ -65,8 +65,8 @@ export default function SkillsPage() {
                 >
                     <p>
                         Freelance contractor under different consortiums (IRIS,
-                        Siemens, Atos) at the Employment Directorate and Social
-                        Affaires Directorate (DG-EMPL).
+                        Siemens, Atos) at the Employment General Directorate
+                        (DG-EMPL).
                     </p>
                     <h4>Projects</h4>
 
